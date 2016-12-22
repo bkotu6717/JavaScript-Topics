@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Explain JavaScript Variable Hoisting</title>
+</head>
+<body>
+
+	<!-- Javascript Varaible hosting is nothing but declare a variable before its initialiazation -->
+	<script type="text/javascript">
+
+		// declare a global variable and initailize with a value
+		//  A directly initialized variable declaration will be moved to the top of the function definition
+		// 	 var myVar = "My global Varaible" will be split as
+		// 	var myVar;
+		// 	myVar = "My global Varaible"
+		// Any varaible outside of a function definition will be treated as global variable
+
+		 var myVar = "My global variable";
+
+		// Define a self invoking function
+		(function(){
+			alert(myVar);
+			var myVar = "My local variable";
+			alert(myVar);
+		})();
+
+	</script>
+
+</body>
+</html>

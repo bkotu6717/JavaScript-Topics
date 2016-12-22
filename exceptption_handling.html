@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Explain Exception handling</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	function getMonthName(month){
+		months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+		// adjust month id as per array indexing
+		month  = month - 1;
+		if (months[month])
+			alert(months[month]);
+		else
+			throw new Error("Unknown month provided");
+	}
+	// 
+	try{
+		month = getMonthName(1);
+		month = getMonthName(13);
+	}catch(e){
+		alert(e.name + ": " + e.message);
+	}finally{
+		alert("Finally do something");
+	}
+</script>
+</body>
+</html>
